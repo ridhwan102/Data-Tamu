@@ -1,0 +1,8 @@
+- Sistem tidak memiliki halaman sign up atau register akun. Sehingga gunakan contoh akun yg sudah dibuat.
+- Tambahkan sistem sign up
+- Tamu dapat melihat daftar tamu
+- Tamu juga dapat mengisi daftar tamu
+-- Jika tamu sudah mengisi daftar tamu sebelumnya, tamu hanya perlu memasukkan nik. Sistem akan menampilkan sisa data secara otomatis
+-- Untuk menghindari data duplikat, autofill berdasarkan key up pengisian form nik
+-- Setiap kali tamu menyimpan biodata lakukan update
+- Foto dapat diinput berupa file
