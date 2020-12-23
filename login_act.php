@@ -26,7 +26,7 @@ if (isset($_POST['login']))
     {
         echo "
         <script>
-        location='login.php';
+        location='index.php';
         alert('Nomor HP atau Password salah');
         </script>
         ";

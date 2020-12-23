@@ -9,7 +9,7 @@
     {
         echo "
         <script>
-        location='login.php';
+        location='index.php';
         alert('Silahkan Login Dahulu');
         </script>
         ";
