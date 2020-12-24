@@ -22,7 +22,7 @@
     $hitung = mysqli_query($db, "SELECT * FROM datatamu");
     $total = mysqli_num_rows($hitung);
     $pages = ceil($total/$jumlahdata);
-    $sql = mysqli_query($db, "SELECT * FROM datatamu LIMIT $mulai, $jumlahdata");
+    $sql = mysqli_query($db, "SELECT * FROM datatamu ORDER BY idtamu DESC LIMIT $mulai, $jumlahdata");
 
     // syntax untuk load pegawai
     $cekpeg = mysqli_query($db, "SELECT * FROM pegawai");
@@ -56,7 +56,7 @@
         echo "<td>".$no['alamat']."</td>";
         echo "<td>".$no['nohp']."</td>";
         echo "<td>".$no['keperluan']."</td>";
-        echo "<td>".$no['keperluan']."</td>"; ///  gantii
+        echo "<td><img style='height: 200px;' src='foto/".$no['nik'].".".$no['extfoto']."'></td>";
         echo "</tr>";
     } ?>
     </table>
@@ -85,7 +85,7 @@
     <div class="w3-container">
         <h2>Tambah Data Tamu</h2>
 
-        <form method="POST" action="tamu_act.php">
+        <form method="POST" action="tamu_act.php" enctype="multipart/form-data">
             <label>NIK</label><br>
             <input type="text" name="nik" id="nik" onkeyup="ceknik()" class="w3-input w3-border" required="">
             
@@ -109,6 +109,10 @@
             <label>Keperluan</label>
             <input type="text" name="keperluan" id="keperluan" class="w3-input w3-border" required="">
             
+            <br>
+            <label>Foto</label>
+            <input type="file" name="foto" class="w3-input w3-border" required>
+
             <br>
             <label>Pilih Pegawai yang Ingin Ditemui</label>
             <select name="pegawai" id="pegawai" class="w3-select">

@@ -11,7 +11,13 @@ if (isset($_POST['tambah']))
     $nohp = $_POST['nohp'];
     $keperluan = $_POST['keperluan'];
     $pegawai = $_POST['pegawai'];
-    $extfoto = '.png';  ///// ganti !!
+
+    //foto
+    $src = $_FILES['foto']['tmp_name'];
+    $x = explode('.', $_FILES['foto']['name']);
+    $extfoto = strtolower(end($x));
+    $dst = 'foto/'.$nik.'.'.$extfoto;
+    $hasil = move_uploaded_file($src, $dst);
 
     $sqlcek = mysqli_query($db, "SELECT * FROM datatamu WHERE nik = '$nik'");
     $cek = mysqli_fetch_array($sqlcek);
@@ -41,7 +47,8 @@ if (isset($_POST['tambah']))
     else
     {
         // tambahkan dalam database
-        $insert = mysqli_query($db, "INSERT INTO datatamu (nohp) VALUES ('$nohp')");
+        $insert = mysqli_query($db, "INSERT INTO datatamu (nik, nama, pekerjaan, alamat, nohp, keperluan, extfoto) VALUES ('$nik', '$nama', '$pekerjaan', '$alamat', '$nohp', '$keperluan dengan $pegawai', '$extfoto')");
+
         if ($insert) 
         {
             echo "
