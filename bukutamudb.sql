@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2020 at 09:13 AM
+-- Generation Time: Dec 24, 2020 at 09:24 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -49,7 +49,7 @@ INSERT INTO `akun` (`user`, `salt`, `password`) VALUES
 
 CREATE TABLE `datatamu` (
   `idtamu` int(11) NOT NULL,
-  `nik` int(11) NOT NULL,
+  `nik` varchar(16) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `pekerjaan` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
@@ -63,8 +63,9 @@ CREATE TABLE `datatamu` (
 --
 
 INSERT INTO `datatamu` (`idtamu`, `nik`, `nama`, `pekerjaan`, `alamat`, `nohp`, `keperluan`, `extfoto`) VALUES
-(1, 1, 'Ridhwan Shalahuddin', 'Belum Ada', 'Sidoarjo', '081235863396', 'Testing dengan Pegawai 1', 'png'),
-(2, 2, 'Andina', 'Freelancer', 'Surabaya', '081234567890', 'Memeriksa sistem dengan Pegawai 4', 'png');
+(1, '1', 'Ridhwan Shalahuddin', 'Belum Ada', 'Sidoarjo', '081235863396', 'Testing dengan Pegawai 1', 'png'),
+(2, '2', 'Andina', 'Freelancer', 'Surabaya', '081234567890', 'Memeriksa sistem dengan Pegawai 4', 'png'),
+(3, '6450011212980001', 'Hasin ', 'Game Dev', 'Surabaya', '08153456789', 'Memeriksa sistem dengan Pegawai 2', 'png');
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,7 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `datatamu`
 --
 ALTER TABLE `datatamu`
-  MODIFY `idtamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idtamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `pegawai`
 --

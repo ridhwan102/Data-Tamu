@@ -41,6 +41,7 @@
     <h2>Daftar Tamu</h2>
     <table class="w3-table-all w3-centered">
     <tr>
+        <th>NIK</th>
         <th>Nama</th>
         <th>Pekerjaan</th>
         <th>Alamat / Instansi</th>
@@ -51,6 +52,7 @@
 
     <?php while ($no = mysqli_fetch_array($sql)) {
         echo "<tr>";
+        echo "<td>".$no['nik']."</td>";
         echo "<td>".$no['nama']."</td>";
         echo "<td>".$no['pekerjaan']."</td>";
         echo "<td>".$no['alamat']."</td>";
